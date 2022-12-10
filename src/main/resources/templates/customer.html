@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Seat Reservation</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script th:inline="javascript" defer>
+        var u = [[${session.a}]];
+        if(u == 1) {
+            alert('One record added');
+        } else if(u == 2) {
+            alert('One record edited');
+        } else if (u == 3) {
+            alert('Seat or name cannot be blank');
+        } else if (u == 4) {
+            alert('Please follow the seat code format');
+        } else if (u == 5) {
+            alert('The seat is already taken');
+        } else if (u == 6) {
+            alert('Record updated');
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: darkslategray;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fdbd00;
+        }
+
+        .tableSeats {
+            width: 100%;
+            color: white;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding: 0">
+        <h1>Seat Reservation System</h1>
+
+        <table class="table-striped tableSeats">
+            <thead>
+                <tr style="color: white;">
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td th:text="${listSeats.get(0)}" />
+                    <td th:text="${listSeats.get(1)}" />
+                    <td th:text="${listSeats.get(2)}" />
+                    <td th:text="${listSeats.get(3)}" />
+                    <td th:text="${listSeats.get(4)}" />
+                </tr>
+
+                <tr>
+                    <td th:text="${listSeats.get(5)}" />
+                    <td th:text="${listSeats.get(6)}" />
+                    <td th:text="${listSeats.get(7)}" />
+                    <td th:text="${listSeats.get(8)}" />
+                    <td th:text="${listSeats.get(9)}" />
+                </tr>
+
+                <tr>
+                    <td th:text="${listSeats.get(10)}" />
+                    <td th:text="${listSeats.get(11)}" />
+                    <td th:text="${listSeats.get(12)}" />
+                    <td th:text="${listSeats.get(13)}" />
+                    <td th:text="${listSeats.get(14)}" />
+                </tr>
+
+                <tr>
+                    <td th:text="${listSeats.get(15)}" />
+                    <td th:text="${listSeats.get(16)}" />
+                    <td th:text="${listSeats.get(17)}" />
+                    <td th:text="${listSeats.get(18)}" />
+                    <td th:text="${listSeats.get(19)}" />
+                </tr>
+            </tbody>
+        </table>
+
+        <h1 th:text="'There are ' + ${seatCount} + ' remaining seats'" />
+
+        <form method="post" th:action="@{save}" style="color: white; width: 250px;">
+            <div>
+                <label>Seat Code:</label>
+                <input class="form-control" type="text" name="seatno">
+            </div>
+
+            <div>
+                <label>Customer Name:</label>
+                <input class="form-control" type="text" name="name">
+            </div>
+
+            <div>
+                <label>Transaction Date:</label>
+                <input class="form-control" type="date" name="tdate" th:value="${#dates.format(date, 'yyyy-MM-dd')}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Reserve</button>
+        </form>
+
+        <table class="table-striped" style="width: 100%; background-color: #6c3838; color: #fdbd00;">
+            <thead>
+                <tr style="color: white;">
+                    <th>Transaction Code</th>
+                    <th>Date</th>
+                    <th>Seat Number</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="p:${listCustomer}">
+                    <td th:text="${p.getId()}"></td>
+                    <td th:text="${p.getTdate()}"></td>
+                    <td th:text="${p.getSeatno()}"></td>
+                    <td th:text="${p.getName()}"></td>
+                    <td>
+                        <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete the record?')" th:href="@{delete(id=${p.id})}">Delete</a>
+                    </td>
+                    <td><a class="btn btn-success" th:href="@{editCustomer(id=${p.id})}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
