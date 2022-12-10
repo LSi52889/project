@@ -54,7 +54,7 @@ class CustomerControllerTest {
     void setup() throws ParseException {
         customer = new Customer();
         customer.setId(1L);
-        customer.setName("benji");
+        customer.setName("lovepreet");
         customer.setSeatno("1A");
         String sDate1 = "2012/12/09";
         Date date1 = new SimpleDateFormat("yyyy/MM/dd").parse(sDate1);
@@ -101,7 +101,7 @@ class CustomerControllerTest {
     void editCustomer() throws Exception {
         Customer s2 = new Customer();
         s2.setId(1L);
-        s2.setName("benji");
+        s2.setName("lovepreet");
         s2.setSeatno("1D");
         String sDate1 = "2012/11/11";
         Date date1 = new SimpleDateFormat("yyyy/MM/dd").parse(sDate1);
