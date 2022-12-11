@@ -31,7 +31,7 @@ public class salesmanController {
     }
 
     @GetMapping("/editsalesman")
-    public String editSalesman(Model model, Long id, HttpSession session){
+    public String editsalesman(Model model, Long id, HttpSession session){
         num = 2;
         session.setAttribute("info", 0);
         salesman salesman = salesmanRepository.findById(id).orElse(null);
