@@ -29,7 +29,7 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid" style="padding: 0">
+    <form class="container-fluid" style="padding: 0">
         <br>
         <h1>Final Exam Set B</h1>
         <br>
@@ -53,23 +53,24 @@
                 </tr>
             </tbody>
         </table>
-        <div>
-            <label>Salesman Name</label>
-            <input class="form-control" type="text" name="name">
-        </div>
-        <div>
-            <label>Item Type</label>
-            <input class="form-control" type="text" name="item">
-        </div>
-        <div>
-            <label>Sales Amount</label>
-            <input class="form-control" type="text" name="amount">
-        </div>
-        <div>
-            <label>Transaction Date</label>
-            <input class="form-control" type="date" name="tdate">
-        </div>
-
-    </div>
+        <form method="post" th:action="@{save}">
+            <div>
+                <label>Salesman Name</label>
+                <input class="form-control" type="text" name="name">
+            </div>
+            <div>
+                <label>Item Type</label>
+                <input class="form-control" type="text" name="item">
+            </div>
+            <div>
+                <label>Sales Amount</label>
+                <input class="form-control" type="text" name="amount">
+            </div>
+            <div>
+                <label>Transaction Date</label>
+                <input class="form-control" type="date" name="tdate">
+            </div>
+            <button type="submit" class="btn-primary">Save</button>
+        </form>
 </body>
 </html>
