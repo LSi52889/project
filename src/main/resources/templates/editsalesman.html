@@ -15,26 +15,32 @@
       <form method="post" th:action="@{save}">
         <div>
           <label>Transaction Number</label>
-          <input class="form-control" type="text" name="id" th:value="${customer.id}" readonly>
-          <span th:errors="${customer.id}"></span>
+          <input class="form-control" type="text" name="id" th:value="${salesman.id}" readonly>
+          <span th:errors="${salesman.id}"></span>
         </div>
 
         <div>
           <label>Date of Transaction</label>
-          <input class="form-control" type="date" name="tdate" th:value="${customer.tdate}">
-          <span th:errors="${customer.tdate}"></span>
+          <input class="form-control" type="date" name="tdate" th:value="${salesman.tdate}">
+          <span th:errors="${salesman.tdate}"></span>
         </div>
 
         <div>
-          <label>Seat Number</label>
-          <input class="form-control" type="text" name="seatno" th:value="${customer.seatno}">
-          <span th:errors="${customer.seatno}"></span>
+          <label>Salesman</label>
+          <input class="form-control" type="text" name="name" th:value="${salesman.name}">
+          <span th:errors="${salesman.name}"></span>
         </div>
 
         <div>
-          <label>Name</label>
-          <input class="form-control" type="text" name="name" th:value="${customer.name}">
-          <span th:errors="${customer.name}"></span>
+          <label>Amount</label>
+          <input class="form-control" type="text" name="amount" th:value="${salesman.amount}">
+          <span th:errors="${salesman.amount}"></span>
+        </div>
+
+        <div>
+          <label>Item Type</label>
+          <input class="form-control" type="text" name="item" th:value="${salesman.item}">
+          <span th:errors="${salesman.item}"></span>
         </div>
 
         <button type="submit" class="btn-primary">Save</button>

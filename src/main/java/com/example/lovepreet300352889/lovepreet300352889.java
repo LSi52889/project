@@ -1,14 +1,14 @@
-package com.example.studentpractice;
+package com.example.lovepreet300352889;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class FinalExamApplication {
+public class lovepreet300352889 {
 
     public static void main(String[] args) {
-        SpringApplication.run(FinalExamApplication.class, args);
+        SpringApplication.run(lovepreet300352889.class, args);
     }
 
 

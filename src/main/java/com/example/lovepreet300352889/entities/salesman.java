@@ -1,4 +1,4 @@
-package com.example.studentpractice.entities;
+package com.example.lovepreet300352889.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,12 +10,13 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Customer {
+public class salesman {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private double amount;
+    private String item;
     private String name;
-    private String seatno;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="yyyy-MM-dd")

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Final Exam Set B</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        .tableSeats {
+            width: 100%;
+            color: deepskyblue;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding: 0">
+        <br>
+        <h1>Final Exam Set B</h1>
+        <br>
+        <h1>Sales Summary Table</h1>
+
+        <table class="table-striped tableSeats">
+            <thead>
+                <tr style="color: black;">
+                    <td>Salesman Name</td>
+                    <td>Washing Machine</td>
+                    <td>Refrigerator</td>
+                    <td>Music System</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="color: black;">
+                    <td>Jessica Lam</td>
+                    <td>5000.0</td>
+                    <td>5000.0</td>
+                    <td>0.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <label>Salesman Name</label>
+            <input class="form-control" type="text" name="name">
+        </div>
+        <div>
+            <label>Item Type</label>
+            <input class="form-control" type="text" name="item">
+        </div>
+        <div>
+            <label>Sales Amount</label>
+            <input class="form-control" type="text" name="amount">
+        </div>
+        <div>
+            <label>Transaction Date</label>
+            <input class="form-control" type="date" name="tdate">
+        </div>
+
+    </div>
+</body>
+</html>
